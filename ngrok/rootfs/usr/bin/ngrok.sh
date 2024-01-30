@@ -22,7 +22,7 @@ else
 fi
 echo "tunnels:" >> $configPath
 for id in $(bashio::config "tunnels|keys"); do
-  bashio::log.debug $(bashio::config "tunnels[${id}]")
+  bashio::log.info $(bashio::config "tunnels[${id}]")
   name=$(bashio::config "tunnels[${id}].name")
   echo "  $name:" >> $configPath
   proto=$(bashio::config "tunnels[${id}].proto")
@@ -88,6 +88,6 @@ for id in $(bashio::config "tunnels|keys"); do
   fi
 done
 configfile=$(cat $configPath)
-bashio::log.debug "Config file: \n${configfile}"
+bashio::log.info "Config file: \n${configfile}"
 bashio::log.info "Starting ngrok..."
 ngrok start --config $configPath --all
