@@ -7,7 +7,7 @@ COPY rootfs /
 # Setup requirements
 ARG BUILD_ARCH
 RUN set -x \
- && apk add --no-cache curl \
+ && apk add --no-cache wget \
  && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm64"; fi \
  && if [[ "${BUILD_ARCH}" = "amd64" ]]; then ARCH="amd64"; fi \
  && if [[ "${BUILD_ARCH}" = "armhf" ]]; then ARCH="arm"; fi \
