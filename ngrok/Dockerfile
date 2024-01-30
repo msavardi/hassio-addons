@@ -14,7 +14,7 @@ RUN set -x \
  && if [[ "${BUILD_ARCH}" = "armv7" ]]; then ARCH="arm"; fi \
  && if [[ "${BUILD_ARCH}" = "i386" ]]; then ARCH="386"; fi \
  && wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-${ARCH}.tgz \
- && tar xvzf /ngrok-v3-stable-linux-${ARCH}.tgz -C /bin
+ && tar xvzf /ngrok-v3-stable-linux-${ARCH}.tgz -C /bin \
  && rm -f /ngrok-v3-stable-linux-${ARCH}.tgz
 
 # Initialize ngrok
