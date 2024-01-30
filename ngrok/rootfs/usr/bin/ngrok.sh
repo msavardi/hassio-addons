@@ -11,6 +11,7 @@ fi
 if bashio::var.has_value "$(bashio::config 'log_level')"; then
   echo "log_level: $(bashio::config 'log_level')" >> $configPath
 fi
+echo "version: 2" >> $configPath
 if bashio::var.has_value "$(bashio::config 'auth_token')"; then
   echo "authtoken: $(bashio::config 'auth_token')" >> $configPath
 fi
