@@ -22,6 +22,7 @@ else
 fi
 echo "tunnels:" >> $configPath
 for id in $(bashio::config "tunnels|keys"); do
+  bashio::log.debug $(bashio::config "tunnels[${id}]")
   name=$(bashio::config "tunnels[${id}].name")
   echo "  $name:" >> $configPath
   proto=$(bashio::config "tunnels[${id}].proto")
